@@ -9,7 +9,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - { label: "Title", name: "title", widget: "string" }
       - label: "Landing Page"
         name: "landing"
         file: "content/landing-page.md"
