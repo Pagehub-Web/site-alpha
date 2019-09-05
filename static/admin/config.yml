@@ -12,18 +12,21 @@ collections:
       - label: "Landing Page"
         name: "landing"
         file: "content/landing-page.md"
-        widget: "list"
-        types: 
-          - label: "About"
-            name: "about"
-            widget: object
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Featured Image", name: "image", widget: "image" }
-              - { label: "Description", name: "description", widget: "markdown", default: "content/images/roto.jpg"}
-          - {label: "Dummy Text", name: "dummy", widget: "markdown" }
-          
+        fields:
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            types: 
+              - label: "About"
+                name: "about"
+                widget: object
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Featured Image", name: "image", widget: "image" }
+                  - { label: "Description", name: "description", widget: "markdown", default: "content/images/roto.jpg"}
+              - {label: "Dummy Text", name: "dummy", widget: "markdown" }
+            
 
 
 
-    
+      
