@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <SliderController />
       <div
         style={{
           margin: `0 auto`,
