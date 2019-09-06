@@ -11,15 +11,29 @@ const IndexPage = ({ data }) => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <div
-      className="content"
-      dangerouslySetInnerHTML={{
-        __html:
-          data.allMarkdownRemark.edges[0].node.html ||
-          data.allMarkdownRemark.edges[0].node.excerpt,
-      }}
-    ></div>
+    <div className="sections">
+      {data.allMarkdownRemark.edges.map(edge => 
+        edge.node.frontmatter.sections.map(section => {
+          if (section.type === "about")
+            return (
+              <div className="about-section">
+                <h2>{section.title}</h2>
+                <div className="description" dangerouslySetInnerHTML={{ __html: section.description}}></div>
+                <div className="paragraph">{section.paragraph}</div>
+              </div>
+            )
 
+          if (section.type === "paragraph")
+            return (
+              <div className="paragrpah-section">
+                <h2>{section.title}</h2>
+                <div className="paragraph">{section.paragraph}</div>
+              </div>
+            )
+          else return <>?</>
+        })
+      )}
+    </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
@@ -29,7 +43,15 @@ export const query = graphql`
     allMarkdownRemark {
       edges {
         node {
-          html
+          frontmatter {
+            sections {
+              description
+              image
+              title
+              type
+              paragraph
+            }
+          }
         }
       }
     }
