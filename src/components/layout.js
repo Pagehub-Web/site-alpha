@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
-import SliderController from "./SliderController/SlideController";
+import CarouselWidget from "./CarouselWidget";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <SliderController />
+      <CarouselWidget />
       <div
         style={{
           margin: `0 auto`,
