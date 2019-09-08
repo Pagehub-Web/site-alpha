@@ -13,6 +13,9 @@ const Sections = ({data}) => (
           return (
             <div key={i} className="about-section">
               <h2>{section.title}</h2>
+              <div className="image-container">
+                <img src={`${section.image}`} alt=""/>
+              </div>
               <div
                 className="description"
                 dangerouslySetInnerHTML={{ __html: section.description }}

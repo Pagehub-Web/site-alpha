@@ -3,6 +3,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: content/uploads/images
+public_folder: uploads/images
 
 collections:
   - name: "pages"
