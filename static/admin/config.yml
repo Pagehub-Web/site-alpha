@@ -12,6 +12,8 @@ collections:
       - label: "Landing Page"
         name: "landing"
         file: "content/landing-page.md"
+        editor:
+          preview: false
         fields:
           - label: "Sections"
             name: "sections"
