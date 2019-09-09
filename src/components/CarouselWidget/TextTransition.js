@@ -34,7 +34,6 @@ class TextTransition extends Component {
   componentDidMount() {
     // assign initial header props to state if present
     if (this.props.headers.length !== 0) {
-      
       this.setState({
         header: this.props.headers[this.props.index].header,
         subheader: this.props.headers[this.props.index].subheader,
@@ -43,8 +42,9 @@ class TextTransition extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // Wait fro
-    if (this.props !== prevProps) this.goto(this.props.index, prevProps.index)
+    // Transition to new text once index has changed
+    if (this.props.index !== prevProps.index)
+      this.goto(this.props.index, prevProps.index)
   }
 
   goto(ind, prevInd) {

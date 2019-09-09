@@ -9,7 +9,7 @@ import Navbar from "./Navbar"
 const Header = ({ siteTitle }) => {
   return (
     <header id="home" style={{}}>
-      <div
+      {/* <div
         style={{
           margin: `0 auto`,
           maxWidth: 960,
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
           </Link>
         </h1>
         
-      </div>
+      </div> */}
       <Navbar />
       <CarouselWidget />
     </header>

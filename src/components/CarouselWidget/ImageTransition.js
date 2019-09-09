@@ -15,7 +15,10 @@ class ImageTransition extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.goto(this.props.slideIndex, prevProps.slideIndex);
+    // Move to next slide if index has changed
+    if(this.props.index !== prevProps.index){
+      this.goto(this.props.index, prevProps.index)
+    }
   }
 
   /**
@@ -92,10 +95,13 @@ class ImageTransition extends Component {
 }
 
 ImageTransition.propTypes = {
-  // The current index from the collection of images to reveal for the slideshow
-  slideIndex: PropTypes.number,
-  // The collection of image urls to use for the slideshow
-  imageURLs: PropTypes.arrayOf(PropTypes.string)
-};
+  /**  
+   * The current index from the collection of images to reveal 
+   * for the slideshow */
+  index: PropTypes.number.isRequired,
+  /** 
+   * The collection of image urls to use for the slideshow */
+  imageURLs: PropTypes.arrayOf(PropTypes.string),
+}
 
 export default ImageTransition;

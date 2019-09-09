@@ -93,7 +93,7 @@ class Carouselcontroller extends Component {
     return (
       <div className="slider-controller-container">
         <ImageTransition
-          slideIndex={this.state.index}
+          index={this.state.index}
           images={this.state.images}
         />
 
