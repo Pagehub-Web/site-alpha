@@ -46,10 +46,7 @@ const AboutSection = props => (
 )
 
 const ParagraphSection = props => (
-  <div
-    className="paragrpah-section"
-    id={`${slugify(props.section.title)}`}
-  >
+  <div className="paragrpah-section" id={`${slugify(props.section.title)}`}>
     <h2 style={titleWrapperStyle}>
       <span stlye={{ titleStyle }}>{props.section.title}</span>
     </h2>
