@@ -8,32 +8,36 @@ public_folder: uploads/images
 collections:
   - name: "pages"
     label: "Pages"
+    editor:
+      preview: false
     files:
       - label: "Landing Page"
         name: "landing"
         file: "content/landing-page.md"
-        editor:
-          preview: false
         fields:
           - label: "Sections"
             name: "sections"
             widget: "list"
-            types: 
+            types:
               - label: "About"
                 name: "about"
                 widget: object
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Featured Image", name: "image", widget: "image", default: "roto.jpg" }
-                  - { label: "Description", name: "description", widget: "markdown"}
+                  - {
+                      label: "Featured Image",
+                      name: "image",
+                      widget: "image",
+                      default: "roto.jpg",
+                    }
+                  - {
+                      label: "Description",
+                      name: "description",
+                      widget: "markdown",
+                    }
               - label: "Paragraph"
                 name: "paragraph"
                 widget: object
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Paragraph", name: "paragraph", widget: "string"}
-            
-
-
-
-      
+                  - { label: "Paragraph", name: "paragraph", widget: "string" }
